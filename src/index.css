@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Smooth animation for all interactive elements */
+a, button {
+  @apply transition-all duration-200;
+}
+
+/* Pulse animation for palm scan */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  
+  80%, 100% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse {
+  animation: pulse-ring 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
